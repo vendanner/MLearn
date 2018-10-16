@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+
+"""
+源码都是copy https://github.com/apachecn/AiLearning/tree/dev/src/py3.x/ml
+"""
 import FirstKnn
 import pandas as pd
 from matplotlib import pyplot as plt
