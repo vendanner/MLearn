@@ -11,6 +11,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import FirstKnn
 import SecondDT
+import ThirdBayes
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -23,4 +24,7 @@ if __name__ == "__main__":
     # 数字识别
     # FirstKnn.handWritingClass.test()
     # 眼镜分类
-    SecondDT.test()
+    # SecondDT.test()
+
+    # Bayesian 分类
+    ThirdBayes.test()
