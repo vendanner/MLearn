@@ -12,6 +12,7 @@ from matplotlib import pyplot as plt
 import FirstKnn
 import SecondDT
 import ThirdBayes
+import FourthLR
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -27,4 +28,7 @@ if __name__ == "__main__":
     # SecondDT.test()
 
     # Bayesian 分类
-    ThirdBayes.test()
+    # ThirdBayes.test()
+
+    # 逻辑回归
+    FourthLR.test()
