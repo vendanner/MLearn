@@ -13,6 +13,7 @@ import FirstKnn
 import SecondDT
 import ThirdBayes
 import FourthLR
+import FifthRegression
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -31,4 +32,7 @@ if __name__ == "__main__":
     # ThirdBayes.test()
 
     # 逻辑回归
-    FourthLR.test()
+    # FourthLR.test()
+
+    # 线性回归
+    FifthRegression.test()
