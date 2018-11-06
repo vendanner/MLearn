@@ -31,33 +31,40 @@ def test():
     testLabel = labelMat[testIndx:len(labelMat)]
 
     # 选取不同k 生产不同权重，对模型影响
-    lwlr1 = Regression.lwlr(0.1)
-    lwlr2 = Regression.lwlr(1)
-    lwlr3 = Regression.lwlr(10)
-    # 训练集预测
-    trainy1 =[]
-    trainy2 = []
-    trainy3 = []
-    for i in range(testIndx):
-        trainy1.append(lwlr1.predict(trainData,trainLabel,trainData[i]))
-        trainy2.append(lwlr2.predict(trainData, trainLabel, trainData[i]))
-        trainy3.append(lwlr3.predict(trainData, trainLabel, trainData[i]))
+    # lwlr1 = Regression.lwlr(0.1)
+    # lwlr2 = Regression.lwlr(1)
+    # lwlr3 = Regression.lwlr(10)
+    # # 训练集预测
+    # trainy1 =[]
+    # trainy2 = []
+    # trainy3 = []
+    # for i in range(testIndx):
+    #     trainy1.append(lwlr1.predict(trainData,trainLabel,trainData[i]))
+    #     trainy2.append(lwlr2.predict(trainData, trainLabel, trainData[i]))
+    #     trainy3.append(lwlr3.predict(trainData, trainLabel, trainData[i]))
+    #
+    # # 测试集预测
+    # testy1 = []
+    # testy2 = []
+    # testy3 = []
+    # for i in range(len(labelMat) - testIndx):
+    #     testy1.append(lwlr1.predict(trainData, trainLabel, testData[i]))
+    #     testy2.append(lwlr2.predict(trainData, trainLabel, testData[i]))
+    #     testy3.append(lwlr3.predict(trainData, trainLabel, testData[i]))
+    # print(type(trainLabel))
+    # print(type(trainy1))
+    # print("train data k = 0.1 rssError :",((trainLabel - trainy1)**2).sum())
+    # print("train data k = 1 rssError :", ((trainLabel - trainy1) ** 2).sum())
+    # print("train data k = 10 rssError :", ((trainLabel - trainy1) ** 2).sum())
+    #
+    # print("test data k = 0.1 rssError :",((testLabel - testy1)**2).sum())
+    # print("test data k = 1 rssError :", ((testLabel - testy2) ** 2).sum())
+    # print("test data k = 10 rssError :", ((testLabel - testy3) ** 2).sum())
 
-    # 测试集预测
-    testy1 = []
-    testy2 = []
-    testy3 = []
-    for i in range(len(labelMat) - testIndx):
-        testy1.append(lwlr1.predict(trainData, trainLabel, testData[i]))
-        testy2.append(lwlr2.predict(trainData, trainLabel, testData[i]))
-        testy3.append(lwlr3.predict(trainData, trainLabel, testData[i]))
-    print(type(trainLabel))
-    print(type(trainy1))
-    print("train data k = 0.1 rssError :",((trainLabel - trainy1)**2).sum())
-    print("train data k = 1 rssError :", ((trainLabel - trainy1) ** 2).sum())
-    print("train data k = 10 rssError :", ((trainLabel - trainy1) ** 2).sum())
-
-    print("test data k = 0.1 rssError :",((testLabel - testy1)**2).sum())
-    print("test data k = 1 rssError :", ((testLabel - testy2) ** 2).sum())
-    print("test data k = 10 rssError :", ((testLabel - testy3) ** 2).sum())
+    testStage = []
+    stageMode = Regression.stageWise()
+    stageMode.fit(stageMode.regularize(dataMat),(np.mat(labelMat).T - np.mean(np.mat(labelMat).T,0)),200)
+    for i in range(len(labelMat)):
+        testStage.append(stageMode.predict(dataMat[i]))
+    print(" rssError :", ((testStage - labelMat) ** 2).sum())
 
