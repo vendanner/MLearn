@@ -128,11 +128,7 @@ Lasso 是L1 。
         :return: 归一化的数据
         """
         means = np.mean(mat,0)
-        if(np.shape(mat)[1] < 2):
-           #  除方差
-           mat = (mat - means) / np.var(mat,0)
-        else:
-            mat = mat - means
+        mat = (mat - means) / np.var(mat,0)
         return mat
 
     def fit(self,trainData,trainLabel):
@@ -143,7 +139,7 @@ Lasso 是L1 。
         :return: 
         """
         xMat = np.mat(trainData)
-        yMat = np.mat(trainLabel).T
+        yMat = np.mat(trainLabel)
         # 岭回归惩罚项，特征的单位矩阵
         ridge = np.eye(np.shape(xMat)[1]) * self.lam
         if(np.linalg.det(xMat.T * xMat + ridge) == 0):
@@ -160,6 +156,14 @@ Lasso 是L1 。
         """
         return X * self.w
 
+    def rssError(self, y, yHat):
+        """
+        计算误差
+        :param y: 真实值
+        :param yHat: 预测值
+        :return: 
+        """
+        return ((y - yHat) ** 2).sum()
 
 class stageWise():
     """

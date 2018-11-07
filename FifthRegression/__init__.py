@@ -3,6 +3,8 @@
 
 
 from .abalone import *
+from .lego import *
 
 def test():
-    abalone.test()
+    # abalone.test()
+    lego.test()
