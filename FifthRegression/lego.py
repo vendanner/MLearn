@@ -111,6 +111,7 @@ def crossValidation(xArr,yArr,num = 10):
     unReg = bestw/varX
     # 输出构建的模型
     print ("the best model from Ridge Regression is:\n",unReg)
+    # why ？？？
     print ("with constant term: ",-1 * np.sum(np.multiply(meanX,unReg)) + np.mean(yMat,0))
 
 
@@ -137,6 +138,6 @@ def test():
     print("standRegres rssError = ",stand.rssError(np.array(standModeLabel),np.array(trainLabel)))
 
     # 交叉验证
-    # 不要加常量w0,否则无法进行数据标准化
+    # 不要加常量w0,否则无法进行数据标准化(常量的方差为0)
     crossValidation(trainData,trainLabel,10)
 
