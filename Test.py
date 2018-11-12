@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-https://github.com/apachecn/AiLearning/tree/dev/src/py3.x/ml
+机器学习实战 ==> https://github.com/apachecn/AiLearning/tree/dev/src/py3.x/ml
 """
 
 
@@ -14,6 +14,7 @@ import SecondDT
 import ThirdBayes
 import FourthLR
 import FifthRegression
+import SixthAdaBoost
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -35,4 +36,6 @@ if __name__ == "__main__":
     # FourthLR.test()
 
     # 线性回归
-    FifthRegression.test()
+    # FifthRegression.test()
+    # AdaBoost
+    SixthAdaBoost.test()
