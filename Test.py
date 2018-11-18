@@ -3,6 +3,7 @@
 
 """
 机器学习实战 ==> https://github.com/apachecn/AiLearning/tree/dev/src/py3.x/ml
+tree 
 """
 
 
@@ -15,6 +16,7 @@ import ThirdBayes
 import FourthLR
 import FifthRegression
 import SixthAdaBoost
+import SevenRegreTree
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -37,5 +39,10 @@ if __name__ == "__main__":
 
     # 线性回归
     # FifthRegression.test()
+
     # AdaBoost
-    SixthAdaBoost.test()
+    # SixthAdaBoost.test()
+
+    # 回归树、模型数
+    SevenRegreTree.test()
+
