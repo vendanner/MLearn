@@ -17,6 +17,7 @@ import FourthLR
 import FifthRegression
 import SixthAdaBoost
 import SevenRegreTree
+import EighthSvm
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -44,5 +45,6 @@ if __name__ == "__main__":
     # SixthAdaBoost.test()
 
     # 回归树、模型数
-    SevenRegreTree.test()
-
+    # SevenRegreTree.test()
+    # SVM 识别手写数字
+    EighthSvm.test()
