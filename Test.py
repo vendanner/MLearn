@@ -18,6 +18,10 @@ import FifthRegression
 import SixthAdaBoost
 import SevenRegreTree
 import EighthSvm
+import EleventhSVD
+import TwelfthApriori
+import ThirteenthFPgrowth
+import FourteenthRecommed
 
 if __name__ == "__main__":
     # 设置pd 输出显示
@@ -47,4 +51,16 @@ if __name__ == "__main__":
     # 回归树、模型数
     # SevenRegreTree.test()
     # SVM 识别手写数字
-    EighthSvm.test()
+    # EighthSvm.test()
+
+    # SVD 简化数据
+    # EleventhSVD.test()
+
+    # Apriori
+    # TwelfthApriori.test()
+
+    # FP-Growth
+    # ThirteenthFPgrowth.test()
+
+    # 电影推荐系统
+    FourteenthRecommed.test()
